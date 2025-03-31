@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หลักการและวัตถุประสงค์</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt&display=swap');
+    *{  font-family: "Kanit", sans-serif;}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    </style>
+    <img src="img/เพิ่มหัวเรื่อง๑.jpg" width="100%">
+    <nav>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+        <div class="nav-links">
+            <a href="index.html">หน้าหลัก</a>
+
+            <div class="dropdown">
+                <a href="javascript:void(0);" onclick="toggleDropdown(this)">ประกาศ/ข่าวกิจกรรม</a>
+                <div class="dropdown-content">
+                    <a href="news1.html">ประกาศ</a>
+                    <a href="news2.html">ข่าวกิจกรรม</a>
+                </div>
+            </div>
+
+
+            <div class="dropdown">
+                <a href="javascript:void(0);" onclick="toggleDropdown(this)">เกี่ยวกับ</a>
+                <div class="dropdown-content">
+                    <a href="projact1.html">หลักการและวัตถุประสงค์</a>
+                    <a href="projact2.html">เนื้อหาหลักสูตร</a>
+                    <a href="projact3.html">คุณสมบัติ/แผนการ</a>
+                    <a href="projact4.html">เกณฑ์การสำเร็จ</a>
+                    <a href="projact5.html">ค่าใช้จ่าย/รายละเอียด(การสมัคร)</a>
+                    <a href="projact6.html">ประกาศผล</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a href="javascript:void(0);" onclick="toggleDropdown(this)">แบบฟอร์มหลัก</a>
+                <div class="dropdown-content">
+                    <a href="form1.html">ใบสมัคร</a>
+                    <a href="form3.html">ตารางปฏิทิน</a>
+                    <a href="form4.html">เอกสารแสดงความยินยอม</a>
+                </div>
+            </div>
+
+            <a href="listofname.html">ทำเนียบผู้บริหารสถาบัน</a>
+
+            <a href="listname1.html">ทำเนียบรุ่น EXACT</a>
+
+            <div class="dropdown">
+                <a href="javascript:void(0);" onclick="toggleDropdown(this)">รูปภาพกิจกรรม</a>
+                <div class="dropdown-content">
+                    <a href="activity1.html">กิจกรรมการเรียนการสอน</a>
+                    <a href="activity2.html">ภาพบรรยากาศกลุ่มสัมพันธ์</a>
+                    <a href="activity3.html">ศึกษาดูงาน</a>
+                    <a href="activity4.html">ดูไบ</a>
+                </div>
+            </div>
+
+
+            <a href="contact.html">ติดต่อเรา</a>
+        </div>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        function toggleDropdown(element) {
+            var dropdown = element.closest('.dropdown');
+            dropdown.classList.toggle('active');
+            
+            var allDropdowns = document.querySelectorAll('.dropdown');
+            allDropdowns.forEach(function(item) {
+                if (item !== dropdown) {
+                    item.classList.remove('active');
+                }
+            });
+        }
+    </script>
+
+<div class="bb">
+    <h2>หลักการและวัตถุประสงค์</h2>
+
+    <p>1. หลักการและเหตุผล
+        ปัจจุบันโลกมีนวัตกรรมใหม่ๆ เพื่ออํานวยประโยชน์ในด้านต่างๆ อย่างกว้างขวาง โดยแต่ละประเทศมีการ
+        สร้างสรรค์นวัตกรรมเพื่อเพิ่มศักยภาพการแข่งขันตามบริบทที่เป็นจุดแข็งของตน ประเทศไทยก็เช่นกัน โดยเฉพาะด้าน
+        การลงทุนพัฒนาโครงการขนาดใหญ่ในเมือง ที่มีผลต่อการเพิ่มขีดความสามารถในการแข่งขันด้านเศรษฐกิจและสังคม
+        เป็นอย่างยิ่ง ไทยเป็นประเทศที่ถูกจับตามองมากที่สุดประเทศหนึ่งในด้านการสร้างสรรค์สถาปัตยกรรม
+        อย่างไรก็ตาม ความเข้าใจในบทบาท หน้าที่ และความรับผิดชอบของสถาปนิกต่อสังคมในบุคลากรระดับผู้บริหารของ
+        หน่วยงานทั้งภาครัฐ และภาคเอกชน ยังมีความไม่ชัดเจนอยู่มาก ทําให้ผู้บริหารผู้มีอํานาจในการตัดสินใจที่สําคัญในการ
+        พัฒนาด้านต่างๆ ไม่สามารถใช้ศักยภาพของสถาปนิก และงานสถาปัตยกรรมให้เกิดประโยชน์สูงสุดได้
+        สภาสถาปนิกจัดตั้งขึ้นตามพระราชบัญญัติสถาปนิก พ.ศ. 2543 เป็นองค์กรที่ควบคุมวิชาชีพสถาปัตยกรรม
+        โดยประกอบด้วย สาขาสถาปัตยกรรมหลัก สาขาสถาปัตยกรรมผังเมือง สาขาภูมิสถาปัตยกรรม และสาขา
+        สถาปัตยกรรมภายในและมัณฑนศิลป์ ซึ่งมีวัตถุประสงค์ตามมาตรา 7 (5) ช่วยเหลือ แนะนํา เผยแพร่ และให้บริการ
+        ทางวิชาการต่างๆ แก่ประชาชน และองค์กรอื่นที่เกี่ยวกับวิทยาการและเทคโนโลยีทางสถาปัตยกรรม ภายใต้การกํากับ
+        ดูแลของกระทรวงมหาดไทย
+        สภาสถาปนิกได้เล็งเห็นถึงความสําคัญ จึงได้ดําเนินการจัดทําหลักสูตรภายใต้ชื่อหลักสูตร “รู้จักสถาปนิก
+        สําหรับผู้บริหารระดับสูง EXACT (Executive Architect Council Training) เพื่อแนะนําให้ความรู้กับ
+        ผู้นําองค์กรในภาครัฐ และภาคเอกชน ให้ตระหนักและเข้าถึงวิชาชีพสถาปนิก การปฏิบัติงานของสถาปนิก
+        ความรับผิดชอบและมาตรฐานการทํางานของสถาปนิก ตลอดจนงานสถาปัตยกรรมที่มีคุณค่า การใช้งานที่ถูกต้อง
+        และตรงตามวัตถุประสงค์อันก่อให้เกิดประโยชน์สูงสุด
+        </p>
+        <p>2. วัตถุประสงค์
+            เพื่อให้ผู้เข้ารับการอบรมในหลักสูตรได้ทราบถึงบทบาทที่แท้จริงของสถาปนิกทุกสาขา ตลอดจนเข้าใจถึง
+            กฎหมาย และพระราชบัญญัติควบคุมต่างๆ ที่มีผลต่อการลงทุนพัฒนาโครงการ</p>
+</div>
+    <footer> <p>&copy; 2025 สภาสถาปนิก. สงวนลิขสิทธิ์</p></footer>
+</body>
+</html>

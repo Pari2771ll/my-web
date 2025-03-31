@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เอกสารแสดงความยินยอม</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt&display=swap');
+    *{  font-family: "Kanit", sans-serif;}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    </style>
+    <img src="img/เพิ่มหัวเรื่อง๑.jpg" width="100%">
+    <nav>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+        <div class="nav-links">
+            <a href="index.html">หน้าหลัก</a>
+
+            <div class="dropdown">
+                <a href="javascript:void(0);" onclick="toggleDropdown(this)">ประกาศ/ข่าวกิจกรรม</a>
+                <div class="dropdown-content">
+                    <a href="news1.html">ประกาศ</a>
+                    <a href="news2.html">ข่าวกิจกรรม</a>
+                </div>
+            </div>
+
+
+            <div class="dropdown">
+                <a href="javascript:void(0);" onclick="toggleDropdown(this)">เกี่ยวกับ</a>
+                <div class="dropdown-content">
+                    <a href="projact1.html">หลักการและวัตถุประสงค์</a>
+                    <a href="projact2.html">เนื้อหาหลักสูตร</a>
+                    <a href="projact3.html">คุณสมบัติ/แผนการ</a>
+                    <a href="projact4.html">เกณฑ์การสำเร็จ</a>
+                    <a href="projact5.html">ค่าใช้จ่าย/รายละเอียด(การสมัคร)</a>
+                    <a href="projact6.html">ประกาศผล</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a href="javascript:void(0);" onclick="toggleDropdown(this)">แบบฟอร์มหลัก</a>
+                <div class="dropdown-content">
+                    <a href="form1.html">ใบสมัคร</a>
+                    <a href="form3.html">ตารางปฏิทิน</a>
+                    <a href="form4.html">เอกสารแสดงความยินยอม</a>
+                </div>
+            </div>
+
+            <a href="listofname.html">ทำเนียบผู้บริหารสถาบัน</a>
+
+            <a href="listname1.html">ทำเนียบรุ่น EXACT</a>
+
+            <div class="dropdown">
+                <a href="javascript:void(0);" onclick="toggleDropdown(this)">รูปภาพกิจกรรม</a>
+                <div class="dropdown-content">
+                    <a href="activity1.html">กิจกรรมการเรียนการสอน</a>
+                    <a href="activity2.html">ภาพบรรยากาศกลุ่มสัมพันธ์</a>
+                    <a href="activity3.html">ศึกษาดูงาน</a>
+                    <a href="activity4.html">ดูไบ</a>
+                </div>
+            </div>
+
+            <a href="contact.html">ติดต่อเรา</a>
+        </div>
+    </nav>
+
+    <center><h1>เอกสารแสดงความยินยอม (Consent Form)</h1>
+    <h2>ผู้เข้ารับอบรมหลักสูตร EXACT สภาสถาปนิก</h2></center>
+
+    <center><div class="horizontal-line"></div></center>
+
+    <form class="da">
+        <label for="date">กรุณาเลือกวันที่:</label>
+        <input type="date" id="date" name="date">
+        <input type="submit" value="ส่ง">
+    </form>
+
+    <form class="p2">
+        <div style="display: flex; align-items: center;">
+          <!-- คำนำหน้าชื่อ -->
+          <label for="title" style="margin-right: 10px;">คำนำหน้าชื่อ:</label>
+          <select id="title" name="title" required onchange="toggleOtherInput()" style="margin-right: 10px;">
+            <option value="นาย">นาย</option>
+            <option value="นาง">นาง</option>
+            <option value="นางสาว">นางสาว</option>
+            <option value="อื่นๆ">อื่นๆ</option>
+          </select>
+      
+          <!-- ช่องกรอกคำนำหน้าชื่อ ถ้าเลือก "อื่นๆ" -->
+          <label for="otherTitle" id="otherTitleLabel" style="display:none; margin-right: 10px;">:</label>
+          <input type="text" id="otherTitle" name="otherTitle" style="display:none; margin-right: 10px;">
+        </div>
+        <div>
+            <label for="name" style="margin-right: 10px;">กรุณากรอกชื่อของคุณ:</label>
+          <input type="text" id="name" name="name" required>
+          
+         <!-- ปุ่มส่ง -->
+         <input type="submit" value="ส่ง" style="margin-left: 10px;">
+        </div>
+        <div>
+            <label for="message">ผู้เข้ารับการอบรมหลักสูตร EXACT รุ่นที่:</label>
+        <input type="text" id="message" name="message" placeholder="">
+        <input type="submit" value="ส่ง" style="margin-left: 10px;">
+        </div>
+    </form>
+    <div class="p2">
+        <form id="consentForm">
+            <label>
+                <input type="checkbox" id="agree" name="consent" value="agree">
+                ผู้เป็นเจ้าของข้อมูลส่วนบุคคลให้ความยินยอม
+            </label>
+            <label>
+                <input type="checkbox" id="disagree" name="consent" value="disagree">
+                ไม่ให้ความยินยอม แก่สภาสถาปนิกในการเก็บรวบรวม ใช้หรือ เปิดเผย (ประมวลผล) ข้อมูลส่วนบุคคลของข้าพเจ้าเพื่อวัตถุประสงค์ดังต่อไปนี้
+            </label>
+        </form>
+    </div>
+
+    <div class="p2">
+        <p>(1) คู่มือหลักสูตร EXACT</p>
+        <p>(2) สรุปเนื้อหาหลักสูตร EXACT</p>
+        <p>(3) แอพพลิเคชั่นของหลักสูตร</p>
+        <p>(4) เดินทางศึกษาดูงานในประเทศและต่างประเทศ</p>
+        <p>ทั้งนี้ก่อนการแสดงเจตนา ข้าพเจ้าได้อ่านรายละเอียดจากเอกสารชี้แจงข้อมูล หรือได้รับคําอธิบายจาก
+        </p>
+        <p>สภาสถาปนิกถึงวัตถุประสงค์ในการเก็บรวบรวม ใช้หรือเปิดเผย (ประมวลผล) ข้อมูลส่วนบุคคล และมีความเข้าใจดีแล้ว</p>
+        <form id="consentForm">
+        <label>
+            <input type="checkbox" id="agree" name="consent" value="agree">
+            ข้าพเจ้าให้ความยินยอมในเอกสารนี้ด้วยความสมัครใจ ปราศจากการบังคับหรือชักจูง และทราบว่า
+        </label>
+        </form>
+        <p>ข้าพเจ้าสามารถถอนความยินยอมนี้เสียเมื่อใดก็ได้เว้นแต่ในกรณีมีข้อจํากัดสิทธิ์ตามกฏหมาย หรือยังมีสัญญาระหว่าง</p>
+        <p>ข้าพเจ้ากับสภาสถาปนิก ที่ให้ประโยชน์แก่ข้าพเจ้าอยู่</p>
+        <p>ข้าพเจ้าทราบว่าการขอถอนความยินยอมดังกล่าว ไม่มีผลกระทบต่อการประมวลผลข้อมูลส่วนบุคคลที่ได้</p>
+        <p>ดําเนินการเสร็จสิ้นไปแล้วก่อนการถอนความยินยอม</p>
+        <form id="consentForm">
+            <label>
+                <input type="checkbox" id="agree" name="consent" value="agree">
+                ข้าพเจ้าปฏิเสธไม่ให้ความยินยอมในเอกสารนี้ด้วยความสมัครใจ ข้าพเจ้าทราบว่าการไม่ให้ความ
+            </label>
+        </form>
+        <p>ยินยอมจะมีผลทําให้ข้าพเจ้าอาจได้รับความสะดวกในการใช้บริการน้อยลง หรือไม่สามารถเข้าถึงข่าวสารในการเข้าร่วม</p>
+        <p>กิจกรรมและการใช้งานในหลักสูตรบางอย่างได้เป็น</p>
+    </div>
+
+
+    <div class="form-container">
+    <h2>แบบฟอร์มลงชื่อ</h2>
+    <div class="signature">
+        <p>ลงชื่อ <span class="input-line" contenteditable="true"></span></p>
+        <p>(<span class="input-line" contenteditable="true"></span>)</p>
+    </div>
+    <div class="date">
+        <input type="text" placeholder="วัน">
+        /<input type="text" placeholder="เดือน">
+        /<input type="text" placeholder="ปี">
+    </div>
+</div>
+
+    <script>
+        // ฟังก์ชันในการแสดง/ซ่อนช่องกรอกคำนำหน้าชื่อเมื่อเลือก "อื่นๆ"
+        function toggleOtherInput() {
+          const titleSelect = document.getElementById('title');
+          const otherTitleInput = document.getElementById('otherTitle');
+          const otherTitleLabel = document.getElementById('otherTitleLabel');
+          if (titleSelect.value === 'อื่นๆ') {
+            otherTitleInput.style.display = 'inline';
+            otherTitleLabel.style.display = 'inline';
+          } else {
+            otherTitleInput.style.display = 'none';
+            otherTitleLabel.style.display = 'none';
+          }
+        }
+    </script>
+
+    <script>
+        document.getElementById("exactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let message = document.getElementById("message").value;
+            
+            if (!message) {
+                alert("กรุณากรอกหมายเลขรุ่น");
+                return;
+            }
+
+            console.log("ส่งข้อมูล: " + message);
+        });
+    </script>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        function toggleDropdown(element) {
+            var dropdown = element.closest('.dropdown');
+            dropdown.classList.toggle('active');
+            
+            var allDropdowns = document.querySelectorAll('.dropdown');
+            allDropdowns.forEach(function(item) {
+                if (item !== dropdown) {
+                    item.classList.remove('active');
+                }
+            });
+        }
+    </script>
+    <footer> <p>&copy; 2025 สภาสถาปนิก. สงวนลิขสิทธิ์</p></footer>
+</body>
+</html>

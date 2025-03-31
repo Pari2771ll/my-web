@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ค่าใช้จ่ายและรายละเอียด(การสมัคร)</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt&display=swap');
+    *{  font-family: "Kanit", sans-serif;}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    </style>
+    <img src="img/เพิ่มหัวเรื่อง๑.jpg" width="100%">
+    <nav>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+        <div class="nav-links">
+            <a href="index.html">หน้าหลัก</a>
+
+            <div class="dropdown">
+                <a href="javascript:void(0);" onclick="toggleDropdown(this)">ประกาศ/ข่าวกิจกรรม</a>
+                <div class="dropdown-content">
+                    <a href="news1.html">ประกาศ</a>
+                    <a href="news2.html">ข่าวกิจกรรม</a>
+                </div>
+            </div>
+
+
+            <div class="dropdown">
+                <a href="javascript:void(0);" onclick="toggleDropdown(this)">เกี่ยวกับ</a>
+                <div class="dropdown-content">
+                    <a href="projact1.html">หลักการและวัตถุประสงค์</a>
+                    <a href="projact2.html">เนื้อหาหลักสูตร</a>
+                    <a href="projact3.html">คุณสมบัติ/แผนการ</a>
+                    <a href="projact4.html">เกณฑ์การสำเร็จ</a>
+                    <a href="projact5.html">ค่าใช้จ่าย/รายละเอียด(การสมัคร)</a>
+                    <a href="projact6.html">ประกาศผล</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a href="javascript:void(0);" onclick="toggleDropdown(this)">แบบฟอร์มหลัก</a>
+                <div class="dropdown-content">
+                    <a href="form1.html">ใบสมัคร</a>
+                    <a href="form3.html">ตารางปฏิทิน</a>
+                    <a href="form4.html">เอกสารแสดงความยินยอม</a>
+                </div>
+            </div>
+
+            <a href="listofname.html">ทำเนียบผู้บริหารสถาบัน</a>
+
+            <a href="listname1.html">ทำเนียบรุ่น EXACT</a>
+
+            <div class="dropdown">
+                <a href="javascript:void(0);" onclick="toggleDropdown(this)">รูปภาพกิจกรรม</a>
+                <div class="dropdown-content">
+                    <a href="activity1.html">กิจกรรมการเรียนการสอน</a>
+                    <a href="activity2.html">ภาพบรรยากาศกลุ่มสัมพันธ์</a>
+                    <a href="activity3.html">ศึกษาดูงาน</a>
+                    <a href="activity4.html">ดูไบ</a>
+                </div>
+            </div>
+
+
+            <a href="contact.html">ติดต่อเรา</a>
+        </div>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        function toggleDropdown(element) {
+            var dropdown = element.closest('.dropdown');
+            dropdown.classList.toggle('active');
+            
+            var allDropdowns = document.querySelectorAll('.dropdown');
+            allDropdowns.forEach(function(item) {
+                if (item !== dropdown) {
+                    item.classList.remove('active');
+                }
+            });
+        }
+    </script>
+
+<div class="bb">
+    <h2>ค่าใช้จ่ายในการอบรมหลักสูตร</h2>
+    <p>1. ค่าธรรมเนียมการอบรม เป็นเงิน 120,000 บาท</p>
+    <p>2. ค่าใช้จ่ายสําหรับศึกษาต่างประเทศ ค่าใช้จ่ายประมาณ 130,000 บาท (เฉพาะผู้ที่แจ้งความประสงค์
+    ดูงานต่างประเทศ)</p>
+    <h2>รายละเอียดการสมัครเข้ารับการอบรม</h2>
+    <p>ยื่นเอกสารดังต่อไปนี้</p>
+    <p>1. ใบสมัครเข้ารับการอบรม</p>
+    <p>2. เอกสารประวัติผู้เข้ารับการอบรม</p>
+    <p>3. รูปถ่ายขนาด 2 นิ้ว จํานวน 1 รูป (นามสกุลไฟล์ .jpg .png ความละเอียดที่แนะนํา ไม่น้อยกว่า 150-300 dpi)</p>
+    <p>4. สําเนาบัตรประจําตัวประชาชน หรือสําเนาบัตรข้าราชการ พร้อมรับรองสําเนาถูกต้อง</p>
+    <h2>ระยะเวลาในการอบรม</h2>
+    <p>ระยะเวลาอบรม ระหว่างเดือนมิถุนายน - เดือนพฤศจิกายน</p>
+</div>
+    <footer> <p>&copy; 2025 สภาสถาปนิก. สงวนลิขสิทธิ์</p></footer>
+</body>
+</html>

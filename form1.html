@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ใบสมัคร</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt&display=swap');
+        *{  
+            font-family: "Kanit", sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .pdf-container {
+            width: 100%;
+            height: 80vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            font-size: 15px;
+            color: #555;
+        }
+
+        fieldset {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            font-size: 15px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            font-size: 15px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .gender-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .gender-options input {
+            margin-right: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 15px;
+            }
+
+            .gender-options {
+                flex-wrap: nowrap; 
+            }
+
+            .gender-options input {
+                margin-right: 0;
+                margin-bottom: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 16px;
+            }
+
+            fieldset {
+                padding: 15px;
+            }
+
+            label, input, textarea {
+                font-size: 14px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+        .checkbox-group {
+            display: flex;
+            gap: 20px; /* ระยะห่างระหว่างตัวเลือก */
+            flex-wrap: wrap;
+        }
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 5px; /* ระยะห่างระหว่าง checkbox กับข้อความ */
+            white-space: nowrap;
+        }
+        #other-input {
+            display: none; /* ซ่อนช่องกรอกข้อมูลเมื่อยังไม่เลือก "อื่นๆ" */
+        }
+        .size-options label {
+    display: inline-block;
+    margin-right: 10px; /* ปรับระยะห่างระหว่างตัวเลือก */
+  }
+    </style>
+
+
+    <img src="img/เพิ่มหัวเรื่อง๑.jpg" width="100%">
+
+
+    <nav>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <div class="nav-links">
+            <a href="index.html">หน้าหลัก</a>
+            <div class="dropdown">
+                <a href="javascript:void(0);" onclick="toggleDropdown(this)">ประกาศ/ข่าวกิจกรรม</a>
+                <div class="dropdown-content">
+                    <a href="news1.html">ประกาศ</a>
+                    <a href="news2.html">ข่าวกิจกรรม</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="javascript:void(0);" onclick="toggleDropdown(this)">เกี่ยวกับ</a>
+                <div class="dropdown-content">
+                    <a href="projact1.html">หลักการและวัตถุประสงค์</a>
+                    <a href="projact2.html">เนื้อหาหลักสูตร</a>
+                    <a href="projact3.html">คุณสมบัติ/แผนการ</a>
+                    <a href="projact4.html">เกณฑ์การสำเร็จ</a>
+                    <a href="projact5.html">ค่าใช้จ่าย/รายละเอียด(การสมัคร)</a>
+                    <a href="projact6.html">ประกาศผล</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="javascript:void(0);" onclick="toggleDropdown(this)">แบบฟอร์มหลัก</a>
+                <div class="dropdown-content">
+                    <a href="form1.html">ใบสมัคร</a>
+                    <a href="form3.html">ตารางปฏิทิน</a>
+                    <a href="form4.html">เอกสารแสดงความยินยอม</a>
+                </div>
+            </div>
+            <a href="listofname.html">ทำเนียบผู้บริหารสถาบัน</a>
+            <div class="dropdown">
+                <a href="javascript:void(0);" onclick="toggleDropdown(this)">ทำเนียบรุ่น</a>
+                <div class="dropdown-content">
+                    <a href="listname1.html">EXACT รุ่นที่ 1</a>
+                    <a href="listname2.html">EXACT รุ่นที่ 2</a>
+                    <a href="listname3.html">EXACT รุ่นที่ 3</a>
+                    <a href="listname4.html">EXACT รุ่นที่ 4</a>
+                    <a href="listname5.html">EXACT รุ่นที่ 5</a>
+                    <a href="listname6.html">EXACT รุ่นที่ 6</a>
+                    <a href="listname7.html">EXACT รุ่นที่ 7</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="javascript:void(0);" onclick="toggleDropdown(this)">รูปภาพกิจกรรม</a>
+                <div class="dropdown-content">
+                    <a href="activity1.html">กิจกรรมการเรียนการสอน</a>
+                    <a href="activity2.html">ภาพบรรยากาศกลุ่มสัมพันธ์</a>
+                    <a href="activity3.html">ศึกษาดูงาน</a>
+                    <a href="activity4.html">ดูไบ</a>
+                </div>
+            </div>
+            <a href="contact.html">ติดต่อเรา</a>
+        </div>
+    </nav>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        function toggleDropdown(element) {
+            var dropdown = element.closest('.dropdown');
+            dropdown.classList.toggle('active');
+            
+            var allDropdowns = document.querySelectorAll('.dropdown');
+            allDropdowns.forEach(function(item) {
+                if (item !== dropdown) {
+                    item.classList.remove('active');
+                }
+            });
+        }
+    </script>
+    <div class="container">
+        <form action="#" method="post">
+            <center><img src="img/logo.jpg" width="10%"><h2>ใบสมัครเข้ารับการอบรม</h2></center>
+            <center><h3>หลักสูตร " รู้จักสถาปนิก สำหรับผู้บริหารระดับสูง "</h3></center>
+        
+            <fieldset class="mt-4">
+                <legend>1. ข้อมูลของผู้สมัครอบรม (กรุณากรอกข้อมูลให้ชัดเจนและครบถ้วนทุกข้อ)</legend>
+            
+                <label for="gender">คำนำหน้า:</label>
+                <div class="gender-options">
+                    <div>
+                        <input type="radio" id="male" name="gender" value="นาย" onclick="toggleGenderInput()">
+                        <label for="male">นาย</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="female" name="gender" value="นาง" onclick="toggleGenderInput()">
+                        <label for="female">นาง</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="ms" name="gender" value="นางสาว" onclick="toggleGenderInput()">
+                        <label for="ms">นางสาว</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="other" name="gender" value="อื่นๆ" onclick="toggleGenderInput()">
+                        <label for="other">อื่นๆ</label>
+                        <input type="text" id="gender_other" name="gender_other" style="display: none; margin-left: 10px;" placeholder="กรุณาระบุ">
+                    </div>
+                </div>
+            
+                <!-- ข้อมูลอื่นๆ เช่น ชื่อ-นามสกุล, ชื่อเล่น, วันเกิด เป็นต้น -->
+                <label for="fullname">ชื่อ-นามสกุล:</label>
+                <input type="text" id="fullname" name="fullname" required>
+            
+                <label for="nickname">ชื่อเล่น:</label>
+                <input type="text" id="nickname" name="nickname" required>
+            
+                <label for="dob">วัน/เดือน/ปีเกิด:</label>
+                <input type="date" id="dob" name="dob" required>
+            
+                <label for="idcard">เลขบัตรประชาชน:</label>
+                <input type="text" id="idcard" name="idcard" required>
+            
+                <label for="address">ที่อยู่ปัจจุบัน:</label>
+                <textarea id="address" name="address" rows="3" required></textarea>
+            
+                <label for="postalcode">รหัสไปรษณีย์:</label>
+                <input type="postalcode" id="postalcode" name="postalcode" required>
+            
+                <label for="phone">โทรศัพท์:</label>
+                <input type="tel" id="phone" name="phone" required>
+            
+                <label for="email">Email address:</label>
+                <input type="email" id="email" name="email" required>
+            
+                <label for="line">Line-ID:</label>
+                <input type="text" id="line" name="line" required>
+            </fieldset>
+            
+            <script>
+                function toggleGenderInput() {
+                    var otherRadio = document.getElementById('other');
+                    var genderInput = document.getElementById('gender_other');
+            
+                    if (otherRadio.checked) {
+                        genderInput.style.display = 'inline-block'; // แสดงช่องกรอกเมื่อเลือก 'อื่นๆ'
+                    } else {
+                        genderInput.style.display = 'none'; // ซ่อนช่องกรอกเมื่อไม่เลือก 'อื่นๆ'
+                    }
+                }
+            </script>
+            
+            <style>
+                .gender-options {
+                    display: flex;
+                    gap: 10px; /* กำหนดช่องว่างระหว่างตัวเลือก */
+                    align-items: center;
+                }
+            
+                .gender-options label {
+                    margin-right: 10px; /* ให้มีช่องว่างระหว่างตัวเลือก */
+                }
+            
+                .gender-options div {
+                    display: flex;
+                    align-items: center;
+                }
+            
+                .gender-options input[type="text"] {
+                    width: 200px; /* ขนาดช่องกรอก */
+                }
+            </style>
+            
+
+            <fieldset>
+                <legend>2. ข้อมูลคุณวุฒิการศึกษา</legend>
+                <p><b>หมายเหตุ:</b>โปรดกรอกรายละเอียดข้อมูลประวัติบุคคล และการอบรมหลักสูตรต่างๆไว้ใน (Curriculum Vitae-CV) <p>เพื่อเป็นข้อมูลประกอบการพิจารณาของสภาสถาปนิก</p></p>
+                <div class="education-block">
+                    <label for="course1">หลักสูตร:</label>
+                    <input type="text" id="course1" name="course1" class="form-control">
+            
+                    <label for="university1">จากสถาบัน:</label>
+                    <input type="text" id="university1" name="university1" class="form-control">
+            
+                    <label for="country1">ประเทศ:</label>
+                    <input type="text" id="country1" name="country1" class="form-control">
+            
+                    <label for="major1">สาขาวิชา:</label>
+                    <input type="text" id="major1" name="major1" class="form-control">
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <div class="education-block">
+                    <label for="course2">หลักสูตร:</label>
+                    <input type="text" id="course2" name="course2" class="form-control">
+            
+                    <label for="university2">จากสถาบัน:</label>
+                    <input type="text" id="university2" name="university2" class="form-control">
+            
+                    <label for="country2">ประเทศ:</label>
+                    <input type="text" id="country2" name="country2" class="form-control">
+            
+                    <label for="major2">สาขาวิชา:</label>
+                    <input type="text" id="major2" name="major2" class="form-control">
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <div class="education-block">
+                    <label for="course3">หลักสูตร:</label>
+                    <input type="text" id="course3" name="course3" class="form-control">
+            
+                    <label for="university3">จากสถาบัน:</label>
+                    <input type="text" id="university3" name="university3" class="form-control">
+            
+                    <label for="country3">ประเทศ:</label>
+                    <input type="text" id="country3" name="country3" class="form-control">
+            
+                    <label for="major3">สาขาวิชา:</label>
+                    <input type="text" id="major3" name="major3" class="form-control">
+                </div>
+            </fieldset>
+
+            <p id="warning" style="color: red; display: none;">กรุณากรอกข้อมูลคุณวุฒิการศึกษาอย่างน้อยหนึ่งชุด</p>
+            
+            <script>
+                function checkFormCompletion() {
+                    var block1Filled = document.querySelector('#course1').value.trim() !== '' || 
+                                       document.querySelector('#university1').value.trim() !== '' || 
+                                       document.querySelector('#country1').value.trim() !== '' || 
+                                       document.querySelector('#major1').value.trim() !== '';
+                    
+                    var block2Filled = document.querySelector('#course2').value.trim() !== '' || 
+                                       document.querySelector('#university2').value.trim() !== '' || 
+                                       document.querySelector('#country2').value.trim() !== '' || 
+                                       document.querySelector('#major2').value.trim() !== '';
+                    
+                    var block3Filled = document.querySelector('#course3').value.trim() !== '' || 
+                                       document.querySelector('#university3').value.trim() !== '' || 
+                                       document.querySelector('#country3').value.trim() !== '' || 
+                                       document.querySelector('#major3').value.trim() !== '';
+            
+
+                    if (!block1Filled && !block2Filled && !block3Filled) {
+                        document.getElementById('warning').style.display = 'block';
+                    } else {
+                        document.getElementById('warning').style.display = 'none';
+                    }
+            
+
+                    if (block1Filled) {
+                        document.getElementById('education-block1').style.border = "2px solid green";
+                    } else {
+                        document.getElementById('education-block1').style.border = "none";
+                    }
+            
+                    if (block2Filled) {
+                        document.getElementById('education-block2').style.border = "2px solid green";
+                    } else {
+                        document.getElementById('education-block2').style.border = "none";
+                    }
+            
+                    if (block3Filled) {
+                        document.getElementById('education-block3').style.border = "2px solid green";
+                    } else {
+                        document.getElementById('education-block3').style.border = "none";
+                    }
+                }
+            
+                document.querySelectorAll('.form-control').forEach(function(input) {
+                    input.addEventListener('input', checkFormCompletion);
+                });
+            </script> 
+            <fieldset>
+                <legend>3. ข้อมูลการทำงาน</legend>
+                
+                <div class="sector-options">
+                    <div class="sector-item">
+                        <input type="radio" id="government" name="sector" value="ภาครัฐ">
+                        <label for="government">ภาครัฐ</label>
+                    </div>
+                    <div class="sector-item">
+                        <input type="radio" id="private" name="sector" value="ภาคเอกชน">
+                        <label for="private">ภาคเอกชน</label>
+                    </div>
+                    <div class="sector-item">
+                        <input type="radio" id="independent" name="sector" value="องค์กรอิสระ">
+                        <label for="independent">องค์กรอิสระ</label>
+                    </div>
+                </div>
+            
+                <div>
+                    <label for="position">ปัจจุบันดำรงตำแหน่ง:</label>
+                    <input type="text" id="position" name="position" required>
+                </div>
+                <div>
+                    <label for="organization">หน่วยงาน/บริษัท:</label>
+                    <input type="text" id="organization" name="organization" required>
+                </div>
+            </fieldset>
+            
+            <style>
+                .sector-options {
+                    display: flex; /* ใช้ flexbox เพื่อให้ตัวเลือกอยู่ในแถวเดียว */
+                    gap: 20px; /* ระยะห่างระหว่างตัวเลือก */
+                    flex-wrap: nowrap; /* หลีกเลี่ยงการให้ตัวเลือกตกแถว */
+                    white-space: nowrap; /* ป้องกันไม่ให้ข้อความยาวตกแถว */
+                }
+            
+                .sector-item {
+                    display: flex; /* ใช้ flex ในการจัดตำแหน่ง radio และ label ให้อยู่ในแถวเดียว */
+                    align-items: center; /* จัดตำแหน่งกลาง */
+                }
+            
+                .sector-item label {
+                    margin-left: 5px; /* เพิ่มช่องว่างระหว่าง radio และ label */
+                }
+            </style>            
+            
+
+            <fieldset>
+                <div>
+                    <legend>4. ข้อมูลด้านการทำงานที่ผ่านมา</legend>
+                    <label for="previous_position">รายละเอียด:</label>
+                    <textarea type="text" id="previous_position" name="previous_position" required></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div>
+                    <legend>5. เหตุผลที่ประสงค์จะเข้ารับการอบรมในหลักสูตรนี้</legend>
+                    <label for="reason">เหตุผล:</label>
+                    <textarea id="reason" name="reason" required></textarea>
+                </div>
+            </fieldset>  
+            
+            <fieldset>
+                <legend>6. รายละเอียดและหลักฐานการสมัคร</legend>
+                <p>6.1 เอกสารประวัติผู้เข้ารับการอบรม (Curriculum Vitae-CV)</p>
+                    <input type="file" id="photo" name="photo" accept="image/*" required>
+
+                <p>6.2 รูปถ่ายขนาด2นิ้ว พื้นหลังขาว จำนวน1รูป <i>(นามสกุลไฟล์ .jpg .png ความละเอียดที่แนะนำไม่น้อยกว่า 150-300 dpi)</i></p>
+                    <input type="file" id="photo" name="photo" accept="image/*">
+
+                <p>6.3 สำเนาบัตรประจำตัวประชาชน หรือสำเนาบัตรข้าราชการ พร้อมรับรองสำเนาถูกต้อง</p>
+                    <input type="file" id="photo" name="photo" accept="image/*">
+            </fieldset>  
+            
+            <fieldset>
+                <p><strong>7. ท่านทราบข่าวการจัดอบรมจากที่ใด (เลือกได้มากกว่า 1 ข้อ)</strong></p>
+                <div class="checkbox-group">
+                    <label><input type="checkbox"> เว็บไซต์</label>
+                    <label><input type="checkbox"> โซเชียลมีเดีย</label>
+                    <label><input type="checkbox"> โทรทัศน์</label>
+                    <label><input type="checkbox"> สื่อสิ่งพิมพ์</label>
+                    <label>
+                        <input type="checkbox" id="other-checkbox"> อื่นๆ
+                    </label>
+                    <input type="text" id="other-input" placeholder="กรุณาระบุ" />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div>
+                    <legend>8.ผู้แนะนําเข้าอบรม</legend>
+                    <label for="fullname">ชื่อ-นามสกุล:</label>
+                <input type="text" id="fullname" name="fullname">
+                </div>
+            </fieldset>
+            <fieldset>
+                <div>
+                    <legend>9. ยินยอมให้สภาสถาปนิกเก็บรวบรวม</legend>
+                    <p>และเปิดเผยข้อมูลส่วนบุคคลที่เกี่ยวข้องของข้าพเจ้า สําหรับใช้ในการอบรม
+                        หลักสูตร <p>“รู้จักสถาปนิก สําหรับผู้บริหารระดับสูง” รายละเอียดตามแบบข้อมูลส่วนบุคคล PDPA ที่ได้ลงนามแล้ว
+                        (เอกสารแนบ 1)</p></p>
+                    </p>
+                    <a href="img/5 เอกสารแสดงความยินยอม สภาสถาปนิก(1) (1).pdf" download>ดาวน์โหลดเอกสาร</a>
+                        <input type="file" id="photo" name="photo" accept="image/*" required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>10. รับทราบข้อปฏิบัติในการเข้ารับการอบรม และยินดี</legend>
+                    <p>ปฏิบัติตามข้อกําหนดคณะอนุกรรมการอํานวยการสถาบัน
+                        สภาสถาปนิก <p>ว่าด้วยการปฏิบัติในการเข้ารับอบรมหลักสูตรรู้จักสถาปนิก สําหรับผู้บริหารระดับสูง พ.ศ. 2568</p>
+                        (เอกสารแนบ 2) ทุกประการ
+                    </p>
+                    <a href="" download>ดาวน์โหลดเอกสาร</a>
+                        <input type="file" id="photo" name="photo" accept="image/*" required>
+                </div>
+            </fieldset>
+            
+            
+            <fieldset>
+                <form class="form-container">
+                    <h2>แบบฟอร์มลงชื่อ</h2>
+                    
+                    <div class="signature">
+                        <label>ลงชื่อ</label>
+                        <input type="text" name="signature" placeholder="ชื่อ" required>
+                        <label>(พิมพ์ชื่อ-นามสกุล)</label>
+                        <input type="text" name="signature-print" placeholder="ชื่อ-นามสกุล" required>
+                    </div>
+        
+                    <div class="date">
+                        <label>วันที่</label>
+                        <input type="number" name="day" placeholder="วัน" min="1" max="31" required>
+                        <input type="number" name="month" placeholder="เดือน" min="1" max="12" required>
+                        <input type="number" name="year" placeholder="ปี" min="1900" max="2100" required>
+                    </div>
+                </form>
+            </fieldset>
+
+            <fieldset>
+                <h6>ขอให้ผู้สมัครอบรมเลือกขนาดเสื้อจากการวัดรอบอกโดยทําเครื่องหมายลงในช่อง  ขนาดเสื้อที่ท่านต้องการ</h6>
+                <div class="size-options">
+                    <p>เสื้อแจ็คเก็ต</p>
+                    <label><input type="radio" name="jacket" value="40"> 40</label>
+                    <label><input type="radio" name="jacket" value="42"> 42</label>
+                    <label><input type="radio" name="jacket" value="44"> 44</label>
+                    <label><input type="radio" name="jacket" value="46"> 46</label>
+                    <label><input type="radio" name="jacket" value="48"> 48</label>
+                    <label><input type="radio" name="jacket" value="50"> 50</label>
+                  </div>
+                  
+                  <div class="size-options">
+                    <p>เสื้อยืดโปโล</p>
+                    <label><input type="radio" name="polo" value="36"> 36</label>
+                    <label><input type="radio" name="polo" value="38"> 38</label>
+                    <label><input type="radio" name="polo" value="40"> 40</label>
+                    <label><input type="radio" name="polo" value="42"> 42</label>
+                    <label><input type="radio" name="polo" value="44"> 44</label>
+                    <label><input type="radio" name="polo" value="46"> 46</label>
+                    <label><input type="radio" name="polo" value="48"> 48</label>
+                  </div>
+                  
+                  <div class="size-options">
+                    <p>เสื้อยืดคอกลม</p>
+                    <label><input type="radio" name="tshirt" value="34"> 34</label>
+                    <label><input type="radio" name="tshirt" value="36"> 36</label>
+                    <label><input type="radio" name="tshirt" value="40"> 40</label>
+                    <label><input type="radio" name="tshirt" value="42"> 42</label>
+                    <label><input type="radio" name="tshirt" value="44"> 44</label>
+                    <label><input type="radio" name="tshirt" value="48"> 48</label>
+                    <label><input type="radio" name="tshirt" value="52"> 52</label>
+                  </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>ผู้ประสานงาน/เลขานุการ</legend>
+                <label for="fullname">ชื่อ-นามสกุล:</label>
+                <input type="text" id="fullname" name="fullname" required>
+            
+                <label for="phone">โทรศัพท์:</label>
+                <input type="tel" id="phone" name="phone" required>
+            
+                <label for="email">Email address:</label>
+                <input type="email" id="email" name="email" required>
+            
+                <label for="line">Line-ID:</label>
+                <input type="text" id="line" name="line" required>
+            </fieldset>
+
+        
+            
+            <script>
+                function toggleOtherInput() {
+                    var otherCheckbox = document.getElementById('other_media'); // ตรวจสอบการเลือก "อื่นๆ" ในข้อ 7
+                    var otherInput = document.getElementById('other_detail_media');
+            
+                    if (otherCheckbox.checked) {
+                        otherInput.style.display = 'inline'; // แสดงช่องกรอกเมื่อเลือก "อื่นๆ"
+                    } else {
+                        otherInput.style.display = 'none'; // ซ่อนช่องกรอกเมื่อไม่เลือก "อื่นๆ"
+                    }
+                }
+                document.getElementById("other-checkbox").addEventListener("change", function() {
+                     var otherInput = document.getElementById("other-input");
+                      otherInput.style.display = this.checked ? "inline-block" : "none";
+                    });
+                    document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            let formData = new FormData(this);
+            let data = {};
+            formData.forEach((value, key) => data[key] = value);
+            
+            fetch("YOUR_GOOGLE_APPS_SCRIPT_URL", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.text())
+            .then(data => alert("ส่งข้อมูลสำเร็จ!"))
+            .catch(error => alert("เกิดข้อผิดพลาด: " + error));
+        });
+            </script>
+            
+            <style>
+                .media-options {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;
+                }
+            
+                .media-item {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                }
+            
+                .media-item input[type="checkbox"] {
+                    margin-left: 0;
+                }
+            
+                .media-item label {
+                    margin: 0;
+                }
+            
+                /* เพิ่มสไตล์ให้ช่องกรอกไปอยู่ข้างๆ คำว่า "อื่นๆ" */
+                .media-item input[type="text"] {
+                    display: inline-block; 
+                    width: 200px; /* ขนาดช่องกรอก */
+                    margin-left: 10px; /* ช่องว่างระหว่างตัวเลือก "อื่นๆ" และช่องกรอก */
+                }
+            </style>
+            
+                     
+            <button type="submit">ส่งใบสมัคร</button>           
+        </form>
+    </div>
+
+    <script>
+        function checkFormCompletion(event) {
+            var block1Filled = document.querySelector('#course1').value.trim() !== '' || 
+                               document.querySelector('#university1').value.trim() !== '' || 
+                               document.querySelector('#country1').value.trim() !== '' || 
+                               document.querySelector('#major1').value.trim() !== '';
+            
+            if (!block1Filled) {
+                event.preventDefault();
+                document.getElementById('warning').style.display = 'block';
+            } else {
+                document.getElementById('warning').style.display = 'none';
+            }
+        }
+
+        document.querySelector('form').addEventListener('submit', checkFormCompletion);
+    </script>
+    
+
+    <footer> 
+        <p>&copy; 2025 สภาสถาปนิก. สงวนลิขสิทธิ์</p>
+    </footer>
+
+</body>
+</html>
